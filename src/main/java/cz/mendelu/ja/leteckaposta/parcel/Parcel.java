@@ -18,7 +18,7 @@ public class Parcel {
 @Id
 @GeneratedValue(generator = "system-uuid")
 @GenericGenerator(name = "system-uuid", strategy = "uuid")
-    private UUID id;
+    private String id;
     private String destination;
     private Double weight;
     private String location;

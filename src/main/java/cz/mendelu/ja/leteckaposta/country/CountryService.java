@@ -22,6 +22,7 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 @Service
 @RequiredArgsConstructor
+public
 class CountryService {
 
     private final JdbcTemplate jdbcTemplate;
@@ -55,6 +56,14 @@ class CountryService {
         log.info("Delete all countries.");
         jdbcTemplate.execute("delete from boarders");
         jdbcTemplate.execute("delete from countries");
+    }
+    public Double getCountryLon(String cca3){
+   String sql = "SELECT capital_lng FROM countries WHERE cca3=?";
+   return jdbcTemplate.queryForObject(sql,new Object[]{cca3},Double.class);
+    }
+    public Double getCountryLat(String cca3){
+        String sql = "SELECT capital_lat FROM countries WHERE cca3=?";
+        return jdbcTemplate.queryForObject(sql,new Object[]{cca3},Double.class);
     }
 
     @Transactional

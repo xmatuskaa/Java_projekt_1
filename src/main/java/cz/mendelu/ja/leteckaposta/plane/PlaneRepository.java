@@ -1,5 +1,6 @@
 package cz.mendelu.ja.leteckaposta.plane;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 @Repository
