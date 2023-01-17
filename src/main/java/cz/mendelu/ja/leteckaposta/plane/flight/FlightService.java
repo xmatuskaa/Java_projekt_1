@@ -32,7 +32,6 @@ public class FlightService {
         Double parcelDepartureLat = countryService.getCountryLat(parcelDepatrure);
         Double parcelDepartureLon = countryService.getCountryLon(parcelDepatrure);
         List<Plane> availablePlanes = planeRepository.findAll();
-        String closestPlane;
         double minDistance=999999999;
         Plane minPlane = null;
         for (Plane plane: availablePlanes) {
